@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateNoteActivity">
+
+    <TextView
+        android:id="@+id/editNoteHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/edit_note"
+        android:textColor="@color/yellow"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/updatesaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editNoteHeading"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_beenhere_24" />
+
+    <EditText
+        android:id="@+id/updatetitleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editNoteHeading"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/yellow_border"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/enter_the_title"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/updatecontentEditText"
+        android:layout_width="374dp"
+        android:layout_height="563dp"
+        android:layout_below="@+id/updatetitleEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/yellow_border"
+        android:fontFamily="@font/poppins"
+        android:gravity="start|top"
+        android:hint="@string/enter_the_description"
+        android:minHeight="120dp"
+        android:padding="12dp"
+        android:textSize="18sp" />
+
+</RelativeLayout>
