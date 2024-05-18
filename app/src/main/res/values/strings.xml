@@ -9,4 +9,12 @@
     <string name="add_new_note">Add new note</string>
     <string name="edit_note">Edit Note</string>
     <string name="memora">Memora</string>
+    <string name="bullets">bullets</string>
+    <string name="table">table</string>
+    <string name="underline">underline</string>
+    <string name="italic">italic</string>
+    <string name="bold">bold</string>
+    <string name="redo">redo</string>
+    <string name="undo">undo</string>
+    <string name="update_note">Update Note</string>
 </resources>

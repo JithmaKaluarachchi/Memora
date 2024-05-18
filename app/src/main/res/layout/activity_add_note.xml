@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddNoteActivity">
@@ -29,6 +34,54 @@
         android:layout_marginEnd="16dp"
         android:src="@drawable/baseline_beenhere_24" />
 
+    <LinearLayout
+        android:id="@+id/editorToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addNoteHeading"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="42dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/action_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bold"
+            android:src="@drawable/bold" />
+
+        <ImageButton
+            android:id="@+id/action_italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/italic"
+            android:src="@drawable/italic" />
+
+        <ImageButton
+            android:id="@+id/action_underline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/underline"
+            android:src="@drawable/underline" />
+
+        <ImageButton
+            android:id="@+id/action_bullets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bullets"
+            android:src="@drawable/bullets" />
+
+        <ImageButton
+            android:id="@+id/action_insert_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/table"
+            android:src="@drawable/table" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
@@ -39,26 +92,34 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/yellow_border"
         android:fontFamily="@font/poppins"
-        android:hint="@string/enter_the_title"
+        android:hint="Enter the title"
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/contentEditText"
-        android:layout_width="385dp"
-        android:layout_height="575dp"
-        android:layout_below="@+id/titleEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/yellow_border"
-        android:fontFamily="@font/poppins"
-        android:gravity="start|top"
-        android:hint="@string/enter_the_description"
-        android:minHeight="120dp"
-        android:padding="12dp"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titleEditText"
+        android:layout_marginTop="51dp"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/contentEditText"
+            android:layout_width="326dp"
+            android:layout_height="417dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/yellow_border"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|top"
+            android:hint="@string/enter_the_description"
+            android:minHeight="120dp"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </LinearLayout>
 </RelativeLayout>
+</ScrollView>

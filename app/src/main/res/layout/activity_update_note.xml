@@ -1,64 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateNoteActivity">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/editNoteHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/edit_note"
-        android:textColor="@color/yellow"
-        android:textSize="24sp" />
-
-    <ImageView
-        android:id="@+id/updatesaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editNoteHeading"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/baseline_beenhere_24" />
-
-    <EditText
-        android:id="@+id/updatetitleEditText"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editNoteHeading"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/yellow_border"
-        android:fontFamily="@font/poppins"
-        android:hint="@string/enter_the_title"
-        android:maxLines="1"
-        android:padding="12dp"
-        android:textSize="20sp" />
+        tools:context=".UpdateNoteActivity">
 
-    <EditText
-        android:id="@+id/updatecontentEditText"
-        android:layout_width="374dp"
-        android:layout_height="563dp"
-        android:layout_below="@+id/updatetitleEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/yellow_border"
-        android:fontFamily="@font/poppins"
-        android:gravity="start|top"
-        android:hint="@string/enter_the_description"
-        android:minHeight="120dp"
-        android:padding="12dp"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/editNoteHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/update_note"
+            android:textColor="@color/yellow"
+            android:textSize="24sp" />
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/updatesaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/editNoteHeading"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/baseline_beenhere_24" />
+
+        <LinearLayout
+            android:id="@+id/editorToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editNoteHeading"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="93dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/action_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bold"
+                android:src="@drawable/bold" />
+
+            <ImageButton
+                android:id="@+id/action_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/italic"
+                android:src="@drawable/italic" />
+
+            <ImageButton
+                android:id="@+id/action_underline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/underline"
+                android:src="@drawable/underline" />
+
+            <ImageButton
+                android:id="@+id/action_bullets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bullets"
+                android:src="@drawable/bullets" />
+
+            <ImageButton
+                android:id="@+id/action_insert_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/table"
+                android:src="@drawable/table" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/updatetitleEditText"
+            android:layout_width="379dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/editNoteHeading"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/yellow_border"
+            android:fontFamily="@font/poppins"
+            android:hint="Enter the title"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/updatecontent"
+            android:layout_width="match_parent"
+            android:layout_height="548dp"
+            android:layout_below="@id/updatetitleEditText"
+            android:layout_marginTop="51dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/updatecontentEditText"
+                android:layout_width="379dp"
+                android:layout_height="515dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/yellow_border"
+                android:fontFamily="@font/poppins"
+                android:gravity="start|top"
+                android:hint="@string/enter_the_description"
+                android:minHeight="120dp"
+                android:padding="12dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
